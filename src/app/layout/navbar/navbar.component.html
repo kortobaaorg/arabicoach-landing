@@ -1,0 +1,63 @@
+<nav class="w-100">
+    <div class="navbar-container d-flex">
+        <div class="logo">
+            <img src="../../../assets/images/logo.svg" alt="arabicoach logo">
+        </div>
+        <ul class="navlinks">
+            <li class="navlink activeLink">
+                <a href="">Home</a>
+            </li>
+            <li class="navlink">
+                <a href="">What is arabicoach?</a>
+            </li>
+            <li class="navlink">
+                <a href="">Why us?</a>
+            </li>
+        </ul>
+
+        <div class="action">
+            <button class="action-btn">Download App</button>
+        </div>
+
+        <div class="res-menu-btn" (click)="menuVisible = true">
+            <span class="material-symbols-rounded icon">
+                menu
+            </span>
+        </div>
+    </div>
+</nav>
+
+<p-sidebar [(visible)]="menuVisible" [fullScreen]="true" position="left" [modal]="true">
+    <div class="responsive-menu w-100 h-100">
+        <div class="container">
+            <div class="header d-flex w-100">
+                <div class="nav-logo">
+                    <a routerLink="home">
+                        <img src="../../../assets/images/logo.svg" alt="arabicoach logo" />
+                    </a>
+                </div>
+                <div class="close" (click)="closeMenu()">
+                    <span class="material-symbols-rounded">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <ul class="navlinks d-flex">
+                <li (click)="scrollToSection('hero')">
+                    <a routerLink="home" routerLinkActive="active" class="navlink activeLink">Home</a>
+                </li>
+                <li (click)="scrollToSection('features')">
+                    <a routerLink="home" class="navlink">What is arabicoach?</a>
+                </li>
+                <li (click)="closeMenu()">
+                    <a routerLink="termsAndConditions" routerLinkActive="active" class="navlink">Why us?</a>
+                </li>
+            </ul>
+
+            <div class="action">
+                <button class="action-btn solid-btn">Download App</button>
+            </div>
+        </div>
+    </div>
+</p-sidebar>

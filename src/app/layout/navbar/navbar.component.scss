@@ -1,0 +1,115 @@
+.navbar-container {
+  width: 81.8%;
+  margin: auto;
+  justify-content: space-between;
+  padding: 1.31rem 0;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 0.73rem 4.4% 0.77rem;
+  }
+  .logo {
+    @media (max-width: 1024px) {
+      width: 2rem;
+    }
+  }
+
+  .navlinks {
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .res-menu-btn {
+    @media (min-width: 1025px) {
+      display: none;
+    }
+    .icon {
+      color: var(--Text-Color);
+      font-size: 1.5rem;
+      width: auto;
+      height: auto;
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 40;
+    }
+  }
+
+  .action-btn {
+    background-color: transparent;
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .logo,
+  .navlink,
+  .action-btn {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+::ng-deep {
+  .p-sidebar .p-sidebar-header {
+    display: none;
+  }
+}
+
+.responsive-menu {
+  background-color: var(--Landing-Primary-light);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: calc(0.85rem + 1.8rem) 4.4% 1.8rem;
+  z-index: 10;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+
+    .header {
+      padding-bottom: 2rem;
+      border-bottom: 0.5px solid var(--Neutral-Color);
+      justify-content: space-between;
+    }
+    .action{
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+
+  .navlink {
+    color: var(--Text-Color);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 180%; /* 1.575rem */
+    padding: 0.22rem 1rem;
+    border-radius: 2.9375rem;
+
+    &.activeLink {
+      color: var(--Primary-Color);
+      font-weight: 600;
+      background: var(--Primary-Primary-chips, rgba(0, 148, 134, 0.12));
+    }
+  }
+
+  @media (max-width: 1024px) {
+    gap: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    .navlink {
+      padding: 0.375rem 1rem;
+      border-radius: 1.5rem;
+    }
+  }
+}
