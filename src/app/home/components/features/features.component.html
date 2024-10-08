@@ -1,53 +1,51 @@
 @if(title){
-    <div class="features-container-main">
-      <div class="title-primary">App Features</div>
-      <div class="features d-flex">
-        @for(item of features.slice(0,4); track $index){
-        <div class="feature-wrapper d-flex" [class.orderSwitch]="$index % 2 !== 0">
-          <div class="feature__img">
-            <img
-              [src]="'../../../../assets/images/' + item.image + '.webp'"
-              alt="mockup"
-            />
-          </div>
-          <div class="feature__body">
-            <div class="title d-flex">
-              {{ item.title1 }}
-              {{ item.highlight }}
-              {{ item.title2 }}
-            </div>
-            <div class="description">
-              {{ item.description }}
-            </div>
-          </div>
-        </div>
-        }
-      </div>
+<div class="features-container-main">
+  <div class="title-primary">
+    App Features
+    <div class="underline">
+      <img src="../../../../assets/images/title-underline.svg" alt="underline">
     </div>
-    }@else {
-    <div class="features-container-sub">
-      <div class="features d-flex">
-        @for(item of features.slice(4); track $index){
-        <div class="feature-wrapper d-flex" [class.orderSwitch]="$index % 2 !== 0">
-          <div class="feature__img">
-            <img
-              [src]="'../../../../assets/images/' + item.image + '.webp'"
-              alt="mockup"
-            />
-          </div>
-          <div class="feature__body">
-            <div class="title d-flex">
-              {{ item.title1 }}
-              {{ item.highlight }}
-              {{ item.title2 }}
-            </div>
-            <div class="description">
-              {{ item.description }}
-            </div>
-          </div>
+  </div>
+  <div class="features d-flex">
+    @for(item of features.slice(0,4); track $index){
+    <div class="feature-wrapper d-flex" [class.orderSwitch]="$index % 2 !== 0">
+      <div class="feature__img">
+        <img [src]="'../../../../assets/images/' + item.image + '.webp'" alt="mockup" />
+      </div>
+      <div class="feature__body">
+        <div class="title">
+          {{ item.title1 }}
+          <span class="highlight"> {{ item.highlight }} </span>
+          {{ item.title2 }}
         </div>
-        }
+        <div class="description">
+          {{ item.description }}
+        </div>
       </div>
     </div>
     }
-    
+  </div>
+</div>
+}@else {
+<div class="features-container-sub">
+  <div class="features d-flex">
+    @for(item of features.slice(4); track $index){
+    <div class="feature-wrapper d-flex" [class.orderSwitch]="$index % 2 !== 0">
+      <div class="feature__img">
+        <img [src]="'../../../../assets/images/' + item.image + '.webp'" alt="mockup" />
+      </div>
+      <div class="feature__body">
+        <div class="title">
+          {{ item.title1 }}
+          <span class="highlight"> {{ item.highlight }} </span>
+          {{ item.title2 }}
+        </div>
+        <div class="description">
+          {{ item.description }}
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+}

@@ -1,0 +1,39 @@
+.download-container{
+    background: var(--Snack-bar) url(../../../../assets/images/download-bg-pattern.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2.5rem 0;
+    flex-direction: column;
+    align-items: center;
+    .logo{
+        @media (max-width:1024px) {
+            width: 4.16rem;
+        } 
+    }
+    .title-primary{
+        margin-top: 1.5rem;
+        color: var(--Primary-on-Container);
+        @media (max-width:1024px) {
+            margin-top: 1rem;
+        }
+    }
+
+    .download-options{
+        margin-top: 3.75rem;
+        gap: 2.97rem;
+        justify-content: center;
+        align-items: center;
+        .option:hover{
+            cursor: pointer;
+        }
+        @media (max-width:1024px) {
+            margin-top: 3rem;
+            flex-direction: column;
+            gap: 0.94rem;
+            .option{
+                width: 11rem;
+            }
+        }
+    }
+}
