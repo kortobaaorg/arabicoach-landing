@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+} from '@angular/router';
 import { SidebarModule } from 'primeng/sidebar';
 
 @Component({
@@ -11,6 +15,23 @@ import { SidebarModule } from 'primeng/sidebar';
 })
 export class NavbarComponent {
   menuVisible: boolean = false;
+  changeNavBg: boolean = false;
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.subscribe({
+      next: (r) => {
+        if (r instanceof NavigationEnd) {
+          const currentRoute = this.router.url;
+          if( currentRoute === '/termsAndConditions' || currentRoute === '/privacyPolicy'){
+            this.changeNavBg = true;
+          }else{
+            this.changeNavBg = false
+          }
+        }
+      },
+    });
+  }
 
   scrollToSection(sectionId: string) {
     // this.router.navigateByUrl('home')

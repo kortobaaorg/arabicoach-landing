@@ -1,3 +1,9 @@
+nav{
+  &.primaryBg{
+    background-color: var(--Landing-Primary-light);
+  }
+}
+
 .navbar-container {
   width: 81.8%;
   margin: auto;
