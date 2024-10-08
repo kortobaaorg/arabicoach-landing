@@ -1,0 +1,18 @@
+<div class="app-banner d-flex w-100" [class.hide]="isVisible">
+    <div class="close-banner" (click)="isVisible=true">
+        <span class="material-symbols-rounded">
+            close
+        </span>
+    </div>
+    <div class="banner-info">
+      <div class="title">
+        Arabic-coach app
+      </div>
+      <div class="body">
+        Try it now - for free
+      </div>
+    </div>
+    <button mat-button class="action-btn" (click)="downloadApp()">
+        Download Now
+    </button>
+</div>

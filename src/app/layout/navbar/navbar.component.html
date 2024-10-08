@@ -4,14 +4,14 @@
             <img src="../../../assets/images/logo.svg" alt="arabicoach logo">
         </a>
         <ul class="navlinks">
-            <li class="navlink activeLink">
-                <a routerLink="">Home</a>
+            <li class="navlink" [class.activeLink]="activeSection === 'heroSection'">
+                <a routerLink="" (click)="scrollToSection('hero')">Home</a>
             </li>
-            <li class="navlink">
+            <!-- <li class="navlink" (click)="scrollToSection('hero')">
                 <a routerLink="">What is arabicoach?</a>
-            </li>
-            <li class="navlink">
-                <a routerLink="">Why us?</a>
+            </li> -->
+            <li class="navlink" [class.activeLink]="activeSection === 'featuresSection'">
+                <a routerLink="" (click)="scrollToSection('features')">App Features</a>
             </li>
         </ul>
 
@@ -32,7 +32,7 @@
         <div class="container">
             <div class="header d-flex w-100">
                 <div class="nav-logo">
-                    <a routerLink="home">
+                    <a routerLink="home" (click)="closeMenu()">
                         <img src="../../../assets/images/logo.svg" alt="arabicoach logo" />
                     </a>
                 </div>
@@ -45,13 +45,15 @@
 
             <ul class="navlinks d-flex">
                 <li (click)="scrollToSection('hero')">
-                    <a routerLink="" routerLinkActive="active" class="navlink activeLink">Home</a>
+                    <a routerLink="" routerLinkActive="active" class="navlink"
+                        [class.activeLink]="activeSection === 'heroSection'">Home</a>
                 </li>
-                <li (click)="scrollToSection('features')">
+                <!-- <li (click)="scrollToSection('features')">
                     <a routerLink="" class="navlink">What is arabicoach?</a>
-                </li>
-                <li (click)="closeMenu()">
-                    <a routerLink="termsAndConditions" routerLinkActive="active" class="navlink">Why us?</a>
+                </li> -->
+                <li (click)="scrollToSection('features')">
+                    <a routerLink="" routerLinkActive="active" class="navlink"
+                        [class.activeLink]="activeSection === 'featuresSection'">App Features</a>
                 </li>
             </ul>
 

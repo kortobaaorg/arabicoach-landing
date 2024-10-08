@@ -5,6 +5,8 @@ import {
   RouterLink,
 } from '@angular/router';
 import { SidebarModule } from 'primeng/sidebar';
+import { ScrollService } from '../../shared/services/scroll.service';
+import { PlatformService } from '../../shared/services/platform.service';
 
 @Component({
   selector: 'app-navbar',
@@ -16,33 +18,41 @@ import { SidebarModule } from 'primeng/sidebar';
 export class NavbarComponent {
   menuVisible: boolean = false;
   changeNavBg: boolean = false;
-  constructor(private router: Router) {}
+
+  activeSection!: string;
+  constructor(private _ScrollService: ScrollService, private router: Router, private platform: PlatformService) {}
 
   ngOnInit() {
-    this.router.events.subscribe({
-      next: (r) => {
-        if (r instanceof NavigationEnd) {
-          const currentRoute = this.router.url;
-          if( currentRoute === '/termsAndConditions' || currentRoute === '/privacyPolicy'){
-            this.changeNavBg = true;
-          }else{
-            this.changeNavBg = false
+    if(this.platform.isBrowser){
+      this.router.events.subscribe({
+        next: (r) => {
+          if (r instanceof NavigationEnd) {
+            const currentRoute = this.router.url;
+            if( currentRoute === '/termsAndConditions' || currentRoute === '/privacyPolicy'){
+              this.changeNavBg = true;
+            }else{
+              this.changeNavBg = false
+            }
+            window.scroll(0, 0);
           }
-        }
-      },
-    });
+        },
+      });
+      this._ScrollService.sectionInViewSubjectObs.subscribe((elementId) => {
+        this.activeSection = elementId;
+      });
+    }
   }
 
   scrollToSection(sectionId: string) {
-    // this.router.navigateByUrl('home')
-    // setTimeout(() => {
-    //   this._ScrollService.sendScrollEvent(sectionId);
-    // }, 500);
-    // this.menuVisible = false;
+    this.router.navigateByUrl('')
+    setTimeout(() => {
+      this._ScrollService.sendScrollEvent(sectionId);
+    }, 500);
+    this.menuVisible = false;
   }
 
   closeMenu() {
     this.menuVisible = false;
-    window.scroll(0, 0);
+    // window.scroll(0, 0);
   }
 }

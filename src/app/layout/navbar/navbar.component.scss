@@ -1,6 +1,17 @@
 nav{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: var(--Landing-Background);
   &.primaryBg{
     background-color: var(--Landing-Primary-light);
+  }
+
+  @media (max-width: 1024px){
+    box-shadow: 0px 4px 6.3px 0px rgba(249, 191, 52, 0.08);
+    &.primaryBg{
+      box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.32);
+    }
   }
 }
 

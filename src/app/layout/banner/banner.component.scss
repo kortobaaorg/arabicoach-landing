@@ -1,0 +1,38 @@
+.app-banner {
+  @media (min-width: 769px) {
+    display: none;
+  }
+  padding: 1rem 4.44%;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  background-color: var(--Primary-Color);
+
+  .close-banner {
+    cursor: pointer;
+    color: var(--Primary-on-Container);
+    font-size: 1.5rem;
+  }
+
+  .banner-info {
+    color: var(--Primary-on-Container);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 180%; /* 1.575rem */
+    .body {
+        font-size: 0.75rem;
+        font-weight: 500;
+        line-height: 180%; /* 1.35rem */
+    }
+  }
+  .action-btn {
+    margin-right: auto;
+    width: 9.0625rem;
+    height: 2.5rem;
+    background-color: var(--Primary-on-Container);
+    border-color: var(--Primary-on-Container);
+  }
+}
+
+.hide {
+  display: none;
+}

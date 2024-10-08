@@ -2,11 +2,12 @@ import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { BannerComponent } from './layout/banner/banner.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, BannerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
