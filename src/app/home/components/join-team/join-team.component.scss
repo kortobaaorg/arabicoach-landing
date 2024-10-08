@@ -1,0 +1,32 @@
+.join-container {
+  background: var(--Snack-bar)
+    url(../../../../assets/images/download-bg-pattern.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2.69rem 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.62rem;
+
+  .title {
+    color: var(--Primary-on-Container);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 180%;
+    text-align: center;
+  }
+
+  .action-btn {
+    color: var(--Primary-on-Container);
+    border-color: var(--Primary-on-Container);
+  }
+
+  @media (max-width: 1024px) {
+    padding: 2rem 16%;
+
+    .title {
+      font-size: 1.125rem;
+    }
+  }
+}

@@ -1,17 +1,17 @@
 <nav class="w-100">
     <div class="navbar-container d-flex">
-        <div class="logo">
+        <a class="logo" routerLink="">
             <img src="../../../assets/images/logo.svg" alt="arabicoach logo">
-        </div>
+        </a>
         <ul class="navlinks">
             <li class="navlink activeLink">
-                <a href="">Home</a>
+                <a routerLink="">Home</a>
             </li>
             <li class="navlink">
-                <a href="">What is arabicoach?</a>
+                <a routerLink="">What is arabicoach?</a>
             </li>
             <li class="navlink">
-                <a href="">Why us?</a>
+                <a routerLink="">Why us?</a>
             </li>
         </ul>
 
@@ -45,10 +45,10 @@
 
             <ul class="navlinks d-flex">
                 <li (click)="scrollToSection('hero')">
-                    <a routerLink="home" routerLinkActive="active" class="navlink activeLink">Home</a>
+                    <a routerLink="" routerLinkActive="active" class="navlink activeLink">Home</a>
                 </li>
                 <li (click)="scrollToSection('features')">
-                    <a routerLink="home" class="navlink">What is arabicoach?</a>
+                    <a routerLink="" class="navlink">What is arabicoach?</a>
                 </li>
                 <li (click)="closeMenu()">
                     <a routerLink="termsAndConditions" routerLinkActive="active" class="navlink">Why us?</a>

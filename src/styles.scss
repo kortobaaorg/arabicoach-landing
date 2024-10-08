@@ -89,22 +89,6 @@ a {
   }
 }
 
-.successSnackbar {
-  color: var(--surface-color-cards);
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 180%; /* 1.575rem */
-  background: var(--Snack-bar);
-}
-
-.errorSnackbar {
-  color: var(--surface-color-cards);
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 180%; /* 1.575rem */
-  background: var(--Warn-Color);
-}
-
 .mat-mdc-snackbar-surface{
   padding-right: 0 !important;
   box-shadow: none !important;

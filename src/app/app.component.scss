@@ -1,0 +1,11 @@
+.scrollTop{
+    position: fixed;
+    bottom: 2rem;
+    right: 2.6%;
+    cursor: pointer;
+    @media (max-width:768px) {
+        width: 40px;
+        bottom: 3rem;
+        right: 4%;
+    }
+}
