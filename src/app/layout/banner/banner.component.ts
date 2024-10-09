@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DownloadAppService } from '../../shared/services/download-app.service';
 
 @Component({
   selector: 'app-banner',
@@ -10,10 +11,10 @@ import { Component } from '@angular/core';
 export class BannerComponent {
   isVisible: boolean = false;
 
-  constructor() {}
+  constructor(private _DownloadAppService: DownloadAppService) {}
 
   // download app
   downloadApp() {
-    // this._appStore.downloadApp();
+    this._DownloadAppService.downloadApp();
   }
 }

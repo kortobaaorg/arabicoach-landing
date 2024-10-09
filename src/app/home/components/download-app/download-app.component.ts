@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-download-app',
@@ -9,12 +10,12 @@ import { Component } from '@angular/core';
 })
 export class DownloadAppComponent {
   downloadApp(store: string) {
-    // if (store === 'appStore') {
-    //   // window.open(environment.APP_STORE_URL);
-    //   window.location.replace(environment.APP_STORE_URL);
-    // } else if (store === 'playStore') {
-    //   // window.open(environment.PLAY_STORE_URL);
-    //   window.location.replace(environment.PLAY_STORE_URL);
-    // }
+    if (store === 'appStore') {
+      // window.open(environment.APP_STORE_URL);
+      window.location.replace(environment.APP_STORE_URL);
+    } else if (store === 'playStore') {
+      // window.open(environment.PLAY_STORE_URL);
+      window.location.replace(environment.GOOGLE_PLAY_URL);
+    }
   }
 }
