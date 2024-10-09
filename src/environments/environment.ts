@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  API: '',
+  API: 'https://arabiccoach-api.kortobaa.net',
   GOOGLE_PLAY_URL:
     'https://play.google.com/store/apps/',
   APP_STORE_URL:

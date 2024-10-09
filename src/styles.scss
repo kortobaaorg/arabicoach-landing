@@ -89,6 +89,14 @@ a {
   }
 }
 
+// Spin Animation
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 .mat-mdc-snackbar-surface{
   padding-right: 0 !important;
   box-shadow: none !important;

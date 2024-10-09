@@ -66,6 +66,16 @@
                     display: block;
                     margin: 2.56rem auto 0;
                 }
+
+                .loader {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        animation: spin 8s linear infinite;
+                        -webkit-animation: spin 2s linear infinite;
+                    }
+                }
             }
         }
 
@@ -112,23 +122,28 @@
         border-color: var(--Primary-Color) !important;
     }
 
-    .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid .mdc-notched-outline__leading,
-    .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid .mdc-notched-outline__notch,
-    .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid .mdc-notched-outline__trailing {
-        border-color: var(--Error-Text) !important;
+    .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
+        caret-color: var(--Primary-Color) !important;
     }
+
+    .invalid-field {
+
+        .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid .mdc-notched-outline__leading,
+        .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid .mdc-notched-outline__notch,
+        .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid .mdc-notched-outline__trailing {
+            border-color: var(--Error-Text) !important;
+        }
+
+        .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid .mdc-text-field__input {
+            caret-color: var(--Error-Text) !important;
+        }
+    }
+
 
     .mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field .mdc-notched-outline__notch {
         border-left: 1px solid transparent !important;
     }
 
-    .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
-        caret-color: var(--Primary-Color) !important;
-    }
-
-    .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid .mdc-text-field__input {
-        caret-color: var(--Error-Text) !important;
-    }
 
     .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
         color: var(--Text-Color) !important;
@@ -162,5 +177,12 @@
         position: relative !important;
         margin-bottom: 1rem;
         padding-left: 0 !important;
+    }
+
+    .mat-mdc-button .mdc-button__label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
     }
 }
