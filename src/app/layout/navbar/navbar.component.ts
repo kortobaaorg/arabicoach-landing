@@ -28,7 +28,7 @@ export class NavbarComponent {
         next: (r) => {
           if (r instanceof NavigationEnd) {
             const currentRoute = this.router.url;
-            if( currentRoute === '/termsAndConditions' || currentRoute === '/privacyPolicy'){
+            if( currentRoute === '/terms-and-conditions' || currentRoute === '/privacy-policy'){
               this.changeNavBg = true;
             }else{
               this.changeNavBg = false

@@ -10,14 +10,14 @@ export const routes: Routes = [
         import('./home/home.component').then((c) => c.HomeComponent),
     },
     {
-      path: 'termsAndConditions',
+      path: 'terms-and-conditions',
       loadComponent: () =>
         import(
           './pages/terms-and-conditions/terms-and-conditions.component'
         ).then((c) => c.TermsAndConditionsComponent),
     },
     {
-      path: 'privacyPolicy',
+      path: 'privacy-policy',
       loadComponent: () =>
         import('./pages/privacy-policy/privacy-policy.component').then(
           (c) => c.PrivacyPolicyComponent
